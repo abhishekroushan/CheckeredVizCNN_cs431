@@ -1,4 +1,4 @@
-Checkered CNN with Multisampling Visualizations
+CheckeredVizCNN with Multisampling Visualizations
 =======================================================
 
 **Reference**
