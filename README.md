@@ -36,7 +36,7 @@ After you have cloned the repository, you can either visualize using the ipython
 
 Ipython Notebook visualizations (might have to create a directory **../data** before). Then RUN all the cells.
 ```bash
-!pyhton3 demo_mnist.py --data_path ../data/mnist
+!python3 demo_mnist.py --data_path ../data/mnist
 ```
 
 To visualize a 64x64 image after 3 subsampling steps using the regularly spaced lattice method (output images can be found in the visualize_output/ folder):
