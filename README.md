@@ -15,6 +15,8 @@ This repository contains:
 - Scripts for training toy CCNN on MNIST (**demo_mnist.py**) and modern models on CIFAR (**demo_cifar.py**).
 - The implementations of DenseNet, ResNet, and VGG that were taken from official implementations under **models/**.
 
+Figure taken from the paper cited.
+
 <img src="media/figure2.png" width="600">
 
 Checkered subsampling improves the accuracy of every architecture as tested on CIFAR10/CIFAR100 (VGG, DenseNet, Wide-ResNet, ResNet). The toy CCNN model trained on MNIST with augmentations achieves accuracy competitive with capsule networks (8.2 million parameters) and beyond the baseline CNN used in the CapsNet paper (35.4 million parameters) with just 93,833 parameters. The results are shown in the figures below.
