@@ -8,18 +8,20 @@ Checkered CNN with Multisampling Visualizations
 The report submitted contains the details.
 
 This repository contains:
+- Training and visualizations for the weights and Representation Similarity Matrices (**RSM**) in the notebook **RunScripts.ipynb** (scroll down to the end).
 - Implementations of checkered layers and a conversion script for converting traditional CNNs into checkered CNNs (CCNNs) in **checkered_layers.py**. 
 - A script for visualizing the patterns created by checkered subsampling in **visualizer.py**. 
-- Scripts for training our toy CCNN on MNIST (**demo_mnist.py**) and modern models on CIFAR (**demo_cifar.py**).
-- The implementations of DenseNet, ResNet, and VGG that we used in our paper under **models/**.
-- Our implementation of tiny ResNet under models/ and our toy CCNN defined in demo_mnist.py.
-
-Checkered subsampling improves the accuracy of every architecture we test on CIFAR10/CIFAR100 (VGG, DenseNet, Wide-ResNet, ResNet). Our tiny ResNet CCNNs achieve accuracy competitive with their full-sized CNN counterparts. Our toy CCNN model trained on MNIST with augmentations achieves accuracy competitive with capsule networks (8.2 million parameters) and beyond the baseline CNN used in the CapsNet paper (35.4 million parameters) with just 93,833 parameters. 
+- Scripts for training Reference toy CCNN on MNIST (**demo_mnist_ref.py**)
+- Scripts for training toy CCNN on MNIST (**demo_mnist.py**) and modern models on CIFAR (**demo_cifar.py**).
+- The implementations of DenseNet, ResNet, and VGG that were taken from official implementations under **models/**.
 
 <img src="media/figure2.png" width="600">
+
+Checkered subsampling improves the accuracy of every architecture as tested on CIFAR10/CIFAR100 (VGG, DenseNet, Wide-ResNet, ResNet). The toy CCNN model trained on MNIST with augmentations achieves accuracy competitive with capsule networks (8.2 million parameters) and beyond the baseline CNN used in the CapsNet paper (35.4 million parameters) with just 93,833 parameters. The results are shown in the figures below.
+
+
 <img src="media/Screen Shot 2019-06-06 at 5.14.20 PM.png" width="600">
 <img src="media/Screen Shot 2019-06-06 at 5.28.31 PM.png" width="600">
-
 
 
 ## Requirements
@@ -30,13 +32,18 @@ Checkered subsampling improves the accuracy of every architecture we test on CIF
 - Pillow ('pip install pillow' or 'conda install pillow')
 
 ## How to run
-After you have cloned the repository, you can either visualize checkered subsampling or train networks on MNIST and CIFAR.
+After you have cloned the repository, you can either visualize using the ipython notebook train networks on MNIST and CIFAR.
+
+Ipython Notebook visualizations (might have to create a directory **../data** before). Then RUN all the cells.
+```bash
+!pyhton3 demo_mnist.py --data_path ../data/mnist
+```
 
 To visualize a 64x64 image after 3 subsampling steps using the regularly spaced lattice method (output images can be found in the visualize_output/ folder):
 ```bash
 python visualize.py --im_size 64 --steps 3 --method lattice
 ```
-To train our tiny CCNN on MNIST (replace data_path with your own path to MNIST, will automatically be downloaded if you don't have it):
+To train tiny CCNN on MNIST (replace data_path with your own path to MNIST, will automatically be downloaded if you don't have it):
 ```bash
 python demo_mnist.py --data_path ../data/mnist
 ```
